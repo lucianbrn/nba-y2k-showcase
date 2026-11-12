@@ -81,12 +81,43 @@ figure{position:relative;z-index:2;display:flex;align-items:flex-end;justify-con
 footer{padding:60px 6vw;background:#000;color:#8b8578;font-size:13px;line-height:1.7;border-top:1px solid #1c1c1c}
 footer b{color:#ddd}
 @media(max-width:760px){.player,.player.flip{grid-template-columns:1fr;grid-template-rows:auto 1fr;height:auto;min-height:100svh;padding:70px 20px 0}.player.flip .copy{order:1}.player.flip figure{order:2}figure{height:100%}.tilt img{max-width:94vw;max-height:64svh}.copy{padding-bottom:10px}header img{height:76px}header h1{font-size:2.15rem}.bglogo{width:180px}}
+
+.filetag{position:absolute;top:60px;left:16px;z-index:4;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.24em;color:rgba(255,255,255,.35)}
+.player.flip .filetag{left:auto;right:16px}
+.scan{position:fixed;inset:0;z-index:94;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 52%,rgba(0,0,0,.52) 100%)}
+.grain{position:fixed;inset:-120px;z-index:95;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>");animation:grainShift .8s steps(5) infinite}
+@keyframes grainShift{0%,100%{transform:translate(0,0)}20%{transform:translate(-46px,28px)}40%{transform:translate(30px,-52px)}60%{transform:translate(-58px,-24px)}80%{transform:translate(44px,40px)}}
+.glx{position:fixed;inset:0;z-index:96;pointer-events:none;opacity:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>")}
+.gla{background-color:rgba(255,0,70,.055);clip-path:polygon(0 15%,100% 15%,100% 19%,0 19%,0 58%,100% 58%,100% 61%,0 61%,0 85%,100% 85%,100% 87%,0 87%)}
+.glb{background-color:rgba(0,255,255,.055);clip-path:polygon(0 34%,100% 34%,100% 37%,0 37%,0 72%,100% 72%,100% 76%,0 76%,0 7%,100% 7%,100% 9%,0 9%)}
+body.glitching .gla{opacity:.5;transform:translateX(-12px)}
+body.glitching .glb{opacity:.5;transform:translateX(12px)}
+body.glitching .grain{opacity:.17}
+body.glitching .meta,body.glitching .filetag{text-shadow:2px 0 rgba(255,0,60,.8),-2px 0 rgba(0,255,255,.8)}
+body.glitching header h1{text-shadow:.045em 0 rgba(255,0,60,.85),-.045em 0 rgba(0,255,255,.85)}
+.rec{position:fixed;top:12px;right:16px;z-index:97;pointer-events:none;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.3em;color:#ff2a44;display:flex;align-items:center;gap:7px}
+.rec i{width:9px;height:9px;border-radius:50%;background:#ff2a44;animation:blink 1.3s steps(1) infinite}
+@keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.12}}
+header h1{animation:flick 7s linear infinite}
+@keyframes flick{0%,91%,93.5%,96%,100%{opacity:1}92%,93%{opacity:.5}97%{opacity:.75}}
+::selection{background:#f2ede4;color:#000}
+html{scrollbar-color:#2c2c2c #000}
+body{cursor:crosshair}a,button{cursor:pointer}
+nav{padding-right:104px}
+.titleimg{display:block;width:min(100%,580px);height:auto}
+.player.wide{grid-template-columns:.8fr 1.2fr}
+.player.wide .tilt img{max-width:56vw}
+@media(max-width:760px){.player.wide{grid-template-columns:1fr;grid-template-rows:auto 1fr}.player.wide .tilt img{max-width:94vw}}
+@media(max-width:760px){.rec{top:auto;bottom:12px;right:12px}}
+@media (prefers-reduced-motion: reduce){.grain{animation:none}header h1{animation:none}.rec i{animation:none}}
 </style></head><body>
+<div class="scan"></div><div class="grain"></div><div class="glx gla"></div><div class="glx glb"></div><div class="rec"><i></i>REC</div>
 <nav><a href="#anthony-davis" style="--p:#FFFFFF">The Brow</a><a href="#anthony-edwards" style="--p:#78BE20">Ant-Man</a><a href="#bronny-james" style="--p:#A855F7">Bronny</a><a href="#cade-cunningham" style="--p:#C9D4E3">Cade</a><a href="#damian-lillard" style="--p:#FF3B3B">Dame Time</a><a href="#devin-booker" style="--p:#F6871F">Book</a><a href="#domantas-sabonis" style="--p:#9B7EDE">Domas</a><a href="#donovan-mitchell" style="--p:#FDBB30">Spida</a><a href="#giannis-antetokounmpo" style="--p:#FFFFFF">ΤΗΕ GRΣΣΚ FRΣΑΚ</a><a href="#ja-morant" style="--p:#E03A3E">Ja</a><a href="#jalen-brunson" style="--p:#F58426">The Truth</a><a href="#jaylen-brown" style="--p:#E8ECF4">JB</a><a href="#jayson-tatum" style="--p:#00B04F">JT</a><a href="#jordan-poole" style="--p:#7FD4FF">Poole Party</a><a href="#josh-giddey" style="--p:#CE1141">Slob Wizard</a><a href="#kawhi-leonard" style="--p:#9B5DE5">The Klaw</a><a href="#kevin-durant" style="--p:#CE1141">Slim Reaper</a><a href="#kyrie-irving" style="--p:#7FB2E0">Uncle Drew</a><a href="#lamelo-ball" style="--p:#2E7CD6">Melo</a><a href="#lauri-markkanen" style="--p:#0057B7">The Finnisher</a><a href="#luka-doncic" style="--p:#00A651">Luka Magic</a><a href="#nikola-jokic" style="--p:#FFD21F">The Joker</a><a href="#paolo-banchero" style="--p:#38A1DB">P5</a><a href="#rui-hachimura" style="--p:#C8102E">Rui</a><a href="#shai-gilgeous-alexander" style="--p:#C7CBD6">SGA</a><a href="#stephen-curry" style="--p:#FFC72C">Chef Curry</a><a href="#ty-jerome" style="--p:#8FA8D8">Ty Jerome</a><a href="#tyler-herro" style="--p:#EEE1C6">Boy Wonder</a><a href="#tyrese-haliburton" style="--p:#FDBB30">Hali</a><a href="#victor-wembanyama" style="--p:#39FF14">Wemby</a></nav>
 <header><img data-key="assets_nba-logoman.png" src="" alt="NBA logo"><h1>We In The League</h1></header>
 
 <section class="player " id="anthony-davis" style="--p:#002B5C;--s:#E31837;--d:#FFFFFF">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 01 // ANTHONY DAVIS</span>
   <img class="bglogo" data-key="assets_logos_wsh.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-michroma','Arial Black',sans-serif;color:#FFFFFF;white-space:nowrap;letter-spacing:.12em;display:inline-block;transform:scaleX(1.05);transform-origin:left center;font-size:clamp(1.9rem,5vw,4.4rem);text-shadow:.045em .045em 0 rgba(0,20,50,.85),0 0 30px rgba(140,180,255,.35);">The Brow</h2>
@@ -97,6 +128,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="anthony-edwards" style="--p:#0C2340;--s:#236192;--d:#78BE20">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 02 // ANTHONY EDWARDS</span>
   <img class="bglogo" data-key="assets_logos_min.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-anton','Arial Black',sans-serif;color:#78BE20;font-style:italic;text-shadow:.05em .05em 0 #02180A,0 0 30px rgba(120,190,32,.4);">Ant-Man</h2>
@@ -107,6 +139,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="bronny-james" style="--p:#552583;--s:#FDB927;--d:#A855F7">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 03 // BRONNY JAMES</span>
   <img class="bglogo" data-key="assets_logos_lal.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-cinzel','Arial Black',sans-serif;color:#A855F7;letter-spacing:.05em;background:linear-gradient(180deg,#E9D5FF 0%,#A855F7 48%,#5B21B6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(253,185,39,.35)) drop-shadow(.04em .04em 0 rgba(0,0,0,.6));text-transform:none;">Bronny</h2>
@@ -117,6 +150,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="cade-cunningham" style="--p:#C8102E;--s:#1D42BA;--d:#C9D4E3">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 04 // CADE CUNNINGHAM</span>
   <img class="bglogo" data-key="assets_logos_det.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-pirata','Arial Black',sans-serif;color:#C9D4E3;background:linear-gradient(180deg,#FFFFFF 0%,#C9D4E3 40%,#7E8CA3 55%,#EDF2F9 72%,#9AA7BB 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 18px rgba(200,220,255,.35));text-transform:none;">Cade</h2>
@@ -127,6 +161,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="damian-lillard" style="--p:#E03A3E;--s:#000000;--d:#FF3B3B">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 05 // DAMIAN LILLARD</span>
   <img class="bglogo" data-key="assets_logos_por.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-portland-trail-blazers','Arial Black',sans-serif;color:#FF3B3B;font-style:italic;text-shadow:.055em .055em 0 #000,0 0 30px rgba(255,59,59,.45);">Dame Time</h2>
@@ -137,6 +172,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="devin-booker" style="--p:#1D1160;--s:#E56020;--d:#E56020">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 06 // DEVIN BOOKER</span>
   <img class="bglogo" data-key="assets_logos_phx.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-ewert','Arial Black',sans-serif;background:linear-gradient(180deg,#FFA63D 0%,#F26522 52%,#8A46C7 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 22px rgba(229,96,32,.45));">Book</h2>
@@ -147,6 +183,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="domantas-sabonis" style="--p:#5A2D81;--s:#63727A;--d:#9B7EDE">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 07 // DOMANTAS SABONIS</span>
   <img class="bglogo" data-key="assets_logos_sac.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-sacramento-kings','Arial Black',sans-serif;color:#9B7EDE;text-shadow:.045em .045em 0 rgba(10,10,14,.9),0 0 26px rgba(192,198,214,.35);">Domas</h2>
@@ -157,6 +194,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="donovan-mitchell" style="--p:#860038;--s:#FDBB30;--d:#FDBB30">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 08 // DONOVAN MITCHELL</span>
   <img class="bglogo" data-key="assets_logos_cle.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-grenze','Arial Black',sans-serif;color:#FDBB30;text-shadow:.05em .05em 0 #2A0208,0 0 30px rgba(115,10,30,.55);text-transform:none;">Spida</h2>
@@ -167,6 +205,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="giannis-antetokounmpo" style="--p:#98002E;--s:#F9A01B;--d:#FFFFFF">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 09 // GIANNIS ANTETOKOUNMPO</span>
   <img class="bglogo" data-key="assets_logos_mia.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-garamond','Arial Black',sans-serif;color:#FFFFFF;font-size:clamp(1.3rem,4vw,3.6rem);white-space:nowrap;letter-spacing:.02em;text-shadow:.04em .04em 0 rgba(120,0,10,.55),0 0 12px rgba(255,255,255,.3);text-transform:none;">ΤΗΕ GRΣΣΚ FRΣΑΚ</h2>
@@ -175,8 +214,9 @@ footer b{color:#ddd}
   </div>
   <figure><div class="tilt" data-tiltkey="assets_players_profile-04.webp"><img data-key="assets_players_profile-04.webp" src="" alt="Giannis Antetokounmpo — Miami Heat"><div class="sheen"></div></div></figure>
 </section>
-<section class="player flip" id="ja-morant" style="--p:#E03A3E;--s:#000000;--d:#E03A3E">
+<section class="player flip wide" id="ja-morant" style="--p:#E03A3E;--s:#000000;--d:#E03A3E">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 10 // JA MORANT</span>
   <img class="bglogo" data-key="assets_logos_por.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-portland-trail-blazers','Arial Black',sans-serif;color:#E03A3E;text-shadow:.05em .05em 0 #000,0 0 26px rgba(224,58,62,.4);">Ja</h2>
@@ -187,9 +227,10 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="jalen-brunson" style="--p:#006BB6;--s:#F58426;--d:#F58426">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 11 // JALEN BRUNSON</span>
   <img class="bglogo" data-key="assets_logos_ny.png" src="" alt="">
   <div class="copy">
-    <h2 style="font-family:'g-teamspirit','Arial Black',sans-serif;color:#F58426;text-shadow:.04em .04em 0 rgba(0,35,90,.8),0 0 26px rgba(245,132,38,.4);text-transform:none;">The Truth</h2>
+    <img class="titleimg" data-key="assets_titles_truth.webp" src="" alt="The Truth" style="">
     <div class="meta">JALEN BRUNSON &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; NEW YORK KNICKS</div>
     <img class="logo" data-key="assets_logos_ny.png" src="" alt="New York Knicks logo">
   </div>
@@ -197,6 +238,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="jaylen-brown" style="--p:#006BB6;--s:#ED174C;--d:#E8ECF4">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 12 // JAYLEN BROWN</span>
   <img class="bglogo" data-key="assets_logos_phi.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-michroma','Arial Black',sans-serif;color:#E8ECF4;letter-spacing:.12em;text-shadow:.05em .05em 0 rgba(160,10,30,.75),0 0 30px rgba(35,80,220,.35);">JB</h2>
@@ -207,6 +249,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="jayson-tatum" style="--p:#007A33;--s:#BA9653;--d:#00B04F">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 13 // JAYSON TATUM</span>
   <img class="bglogo" data-key="assets_logos_bos.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-unbounded','Arial Black',sans-serif;color:#00B04F;text-shadow:.045em .045em 0 #01280F,0 0 30px rgba(0,176,79,.4);">JT</h2>
@@ -217,6 +260,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="jordan-poole" style="--p:#0C2340;--s:#C8102E;--d:#7FD4FF">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 14 // JORDAN POOLE</span>
   <img class="bglogo" data-key="assets_logos_no.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-frijole','Arial Black',sans-serif;color:#7FD4FF;background:linear-gradient(180deg,#F2FBFF 0%,#8FD8FF 38%,#1E7FD9 55%,#AEE6FF 74%,#2B6CB0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 22px rgba(127,212,255,.45));text-transform:none;">Poole Party</h2>
@@ -227,6 +271,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="josh-giddey" style="--p:#CE1141;--s:#000000;--d:#CE1141">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 15 // JOSH GIDDEY</span>
   <img class="bglogo" data-key="assets_logos_chi.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-anton','Arial Black',sans-serif;color:#CE1141;text-shadow:.05em .05em 0 #000,0 0 28px rgba(206,17,65,.4);">Slob Wizard</h2>
@@ -237,16 +282,18 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="kawhi-leonard" style="--p:#CE1141;--s:#000000;--d:#9B5DE5">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 16 // KAWHI LEONARD</span>
   <img class="bglogo" data-key="assets_logos_tor.png" src="" alt="">
   <div class="copy">
-    <h2 style="font-family:'g-cloister','Arial Black',sans-serif;color:#9B5DE5;background:linear-gradient(180deg,#D9B8FF 0%,#8B46C7 55%,#4B1D7A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(150,90,220,.4));text-transform:none;">The Klaw</h2>
+    <img class="titleimg" data-key="assets_titles_klaw.webp" src="" alt="The Klaw" style="width:min(74%,410px)">
     <div class="meta">KAWHI LEONARD &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; TORONTO RAPTORS</div>
     <img class="logo" data-key="assets_logos_tor.png" src="" alt="Toronto Raptors logo">
   </div>
   <figure><div class="tilt" data-tiltkey="assets_players_profile-08.webp"><img data-key="assets_players_profile-08.webp" src="" alt="Kawhi Leonard — Toronto Raptors"><div class="sheen"></div></div></figure>
 </section>
-<section class="player " id="kevin-durant" style="--p:#CE1141;--s:#C4CED4;--d:#CE1141">
+<section class="player  wide" id="kevin-durant" style="--p:#CE1141;--s:#C4CED4;--d:#CE1141">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 17 // KEVIN DURANT</span>
   <img class="bglogo" data-key="assets_logos_hou.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-bebas','Arial Black',sans-serif;color:#CE1141;letter-spacing:.06em;display:inline-block;transform:scaleX(.55);transform-origin:left center;text-shadow:.07em .07em 0 #000,.14em .14em 0 rgba(0,0,0,.5),0 0 46px rgba(0,0,0,.95);">Slim Reaper</h2>
@@ -257,6 +304,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="kyrie-irving" style="--p:#00538C;--s:#B8C4CA;--d:#7FB2E0">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 18 // KYRIE IRVING</span>
   <img class="bglogo" data-key="assets_logos_dal.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-katibeh','Arial Black',sans-serif;color:#7FB2E0;font-size:clamp(3.1rem,9.5vw,7.8rem);background:linear-gradient(180deg,#DCEEFF 0%,#5E9BD8 50%,#1D3F7A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(200,220,255,.35));text-transform:none;">Uncle Drew</h2>
@@ -267,6 +315,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="lamelo-ball" style="--p:#0C2340;--s:#236192;--d:#2E7CD6">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 19 // LAMELO BALL</span>
   <img class="bglogo" data-key="assets_logos_min.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-pirata','Arial Black',sans-serif;color:#2E7CD6;background:linear-gradient(180deg,#BFE0FF 0%,#2E7CD6 55%,#0B2E6B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(46,124,214,.45));text-transform:none;">Melo</h2>
@@ -277,6 +326,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="lauri-markkanen" style="--p:#002B5C;--s:#F9A01B;--d:#0057B7">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 20 // LAURI MARKKANEN</span>
   <img class="bglogo" data-key="assets_logos_utah.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-spacegrotesk','Arial Black',sans-serif;color:#0057B7;letter-spacing:.04em;text-shadow:.045em .045em 0 rgba(255,255,255,.28),0 0 28px rgba(0,87,183,.55);">The Finnisher</h2>
@@ -287,6 +337,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="luka-doncic" style="--p:#552583;--s:#FDB927;--d:#00A651">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 21 // LUKA DONCIC</span>
   <img class="bglogo" data-key="assets_logos_lal.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-grenze','Arial Black',sans-serif;color:#00A651;text-shadow:.045em .045em 0 rgba(0,40,20,.85),0 0 28px rgba(0,166,81,.45);text-transform:none;">Luka Magic</h2>
@@ -297,6 +348,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="nikola-jokic" style="--p:#0E2240;--s:#FEC524;--d:#FFD21F">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 22 // NIKOLA JOKIC</span>
   <img class="bglogo" data-key="assets_logos_den.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-joker','Arial Black',sans-serif;color:#FFD21F;letter-spacing:.02em;text-shadow:.05em .05em 0 rgba(10,30,110,.75),0 0 30px rgba(255,210,31,.35);">The Joker</h2>
@@ -307,6 +359,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="paolo-banchero" style="--p:#0077C0;--s:#C4CED4;--d:#38A1DB">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 23 // PAOLO BANCHERO</span>
   <img class="bglogo" data-key="assets_logos_orl.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-orlando-magic','Arial Black',sans-serif;color:#38A1DB;text-shadow:.05em .05em 0 rgba(230,240,255,.35),0 0 28px rgba(56,161,219,.45);">P5</h2>
@@ -317,6 +370,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="rui-hachimura" style="--p:#C8102E;--s:#1D428A;--d:#C8102E">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 24 // RUI HACHIMURA</span>
   <img class="bglogo" data-key="assets_logos_lac.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-los-angeles-clippers','Arial Black',sans-serif;color:#C8102E;text-shadow:.05em .05em 0 rgba(10,20,90,.8),0 0 26px rgba(200,16,46,.4);">Rui</h2>
@@ -327,6 +381,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="shai-gilgeous-alexander" style="--p:#00653A;--s:#FFC200;--d:#C7CBD6">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 25 // SHAI GILGEOUS-ALEXANDER</span>
   <img class="bglogo" data-key="assets_logos_sea.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-sixcaps','Arial Black',sans-serif;color:#C7CBD6;background:linear-gradient(180deg,#FFFFFF 0%,#D7DBE2 38%,#828A99 52%,#F2F4F8 66%,#9AA3B2 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 22px rgba(210,220,235,.4));letter-spacing:.08em;font-size:clamp(3.6rem,11vw,9rem);">SGA</h2>
@@ -337,6 +392,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="stephen-curry" style="--p:#1D428A;--s:#FFC72C;--d:#FFC72C">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 26 // STEPHEN CURRY</span>
   <img class="bglogo" data-key="assets_logos_gs.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-golden-state-warriors','Arial Black',sans-serif;color:#FFC72C;text-shadow:.045em .045em 0 rgba(5,20,70,.85),0 0 28px rgba(255,199,44,.4);">Chef Curry</h2>
@@ -347,6 +403,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="ty-jerome" style="--p:#5D76A9;--s:#12173F;--d:#8FA8D8">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 27 // TY JEROME</span>
   <img class="bglogo" data-key="assets_logos_mem.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-memphis-grizzlies','Arial Black',sans-serif;color:#8FA8D8;background:linear-gradient(180deg,#FFFFFF 0%,#B9D2F2 45%,#5E84C4 60%,#D8E7FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 20px rgba(143,168,216,.45));">Ty Jerome</h2>
@@ -357,6 +414,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="tyler-herro" style="--p:#00471B;--s:#EEE1C6;--d:#EEE1C6">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 28 // TYLER HERRO</span>
   <img class="bglogo" data-key="assets_logos_mil.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-milwaukee-bucks','Arial Black',sans-serif;color:#EEE1C6;text-shadow:.05em .05em 0 rgba(0,50,20,.8),0 0 26px rgba(238,225,198,.3);">Boy Wonder</h2>
@@ -367,6 +425,7 @@ footer b{color:#ddd}
 </section>
 <section class="player " id="tyrese-haliburton" style="--p:#002D62;--s:#FDBB30;--d:#FDBB30">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 29 // TYRESE HALIBURTON</span>
   <img class="bglogo" data-key="assets_logos_ind.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'f-indiana-pacers','Arial Black',sans-serif;color:#FDBB30;background:linear-gradient(180deg,#FFF3B0 0%,#FDBB30 55%,#C77F0A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(.045em .045em 0 rgba(5,15,60,.85));text-transform:none;">Hali</h2>
@@ -377,6 +436,7 @@ footer b{color:#ddd}
 </section>
 <section class="player flip" id="victor-wembanyama" style="--p:#000000;--s:#C4CED4;--d:#39FF14">
   <div class="glow"></div><div class="vig"></div>
+  <span class="filetag">FILE 30 // VICTOR WEMBANYAMA</span>
   <img class="bglogo" data-key="assets_logos_sa.png" src="" alt="">
   <div class="copy">
     <h2 style="font-family:'g-stencil','Arial Black',sans-serif;color:#39FF14;letter-spacing:.12em;display:inline-block;transform:scaleX(.88);transform-origin:left center;text-shadow:.05em .05em 0 #000,0 0 30px rgba(57,255,20,.35);">Wemby</h2>
@@ -385,11 +445,12 @@ footer b{color:#ddd}
   </div>
   <figure><div class="tilt" data-tiltkey="assets_players_profile-05.webp"><img data-key="assets_players_profile-05.webp" src="" alt="Victor Wembanyama — San Antonio Spurs"><div class="sheen"></div></div></figure>
 </section>
-<footer><b>About this edition:</b> All 30 profiles were cut to transparent PNGs from Lucian's uploaded photos at full native resolution with the pro segmentation model and edge matting (PNG masters kept in the project; the site loads high-quality renditions of the same cutouts). Titles are each player's most well-known nickname, restyled per player — JT in Celtics green, The Joker in the 2019 film's Gothic Joker yellow, The Greek Freak in Greek letters mixed into the English, Wemby in neon Area 51 stencil, Book in a Phoenix orange-to-purple lowrider gradient, The Klaw in Cloister Black (the closest free match to the Mister Cartoon lettering on the Clippers City Edition jersey), The Truth in Team Spirit (the closest free match to the Mets script), Luka Magic in Slovenian-style blackletter green, SGA in skinny silver Six Caps, Bronny in royal Cinzel, Uncle Drew in spiritual Katibeh calligraphy, and the rest in their team's own type or a face picked for the man. Every title's color, texture and shadow is matched to something the man is wearing in his photo — an iced pendant, a velour tracksuit, a leather jacket. Sections are themed by the jersey in each photo, not the player's real team. The figure tilt and lamination sheen are ported from Northern Front's character-select screen. No ratings are shown in this edition — the showcase is the style.</footer>
+<footer><b>About this edition:</b> All 30 profiles were cut to transparent PNGs from Lucian's uploaded photos at full native resolution with the pro segmentation model and edge matting (PNG masters kept in the project; the site loads high-quality renditions of the same cutouts). Titles are each player's most well-known nickname, restyled per player — JT in Celtics green, The Joker in the 2019 film's Gothic Joker yellow, The Greek Freak in Greek letters mixed into the English, Wemby in neon Area 51 stencil, Book in a Phoenix orange-to-purple lowrider gradient, The Klaw as a custom Gemini-lettered blackletter PNG echoing the Mister Cartoon lettering on his Clippers jersey, The Truth as a custom Gemini-lettered PNG in the classic Mets script, Luka Magic in Slovenian-style blackletter green, SGA in skinny silver Six Caps, Bronny in royal Cinzel, Uncle Drew in spiritual Katibeh calligraphy, and the rest in their team's own type or a face picked for the man. Every title's color, texture and shadow is matched to something the man is wearing in his photo — an iced pendant, a velour tracksuit, a leather jacket. Sections are themed by the jersey in each photo, not the player's real team. The figure tilt and lamination sheen are ported from Northern Front's character-select screen. No ratings are shown in this edition — the showcase is the style.</footer>
 <script src="bundle-1.js"></script>
 <script src="bundle-2.js"></script>
 <script src="bundle-3.js"></script>
 <script src="bundle-4.js"></script>
+<script src="bundle-5.js"></script>
 
 <script>
 (function(){
@@ -419,5 +480,26 @@ document.querySelectorAll('section.player').forEach(function(sec){
   });
 });
 }
+</script>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var b = document.body;
+  function burst(){
+    b.classList.add('glitching');
+    setTimeout(function(){
+      b.classList.remove('glitching');
+      if(Math.random() < .35){
+        setTimeout(function(){
+          b.classList.add('glitching');
+          setTimeout(function(){ b.classList.remove('glitching'); }, 90);
+        }, 80);
+      }
+    }, 120 + Math.random() * 220);
+    setTimeout(burst, 2800 + Math.random() * 5600);
+  }
+  setTimeout(burst, 1600);
+})();
 </script>
 </body></html>
