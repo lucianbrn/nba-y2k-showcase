@@ -66,8 +66,8 @@ header h1{font-family:'g-anton','Arial Black',sans-serif;font-size:clamp(2.6rem,
 .player{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;padding:84px 4vw 0;overflow:hidden;background:#050505;border-top:1px solid #141414;scroll-margin-top:0}
 .player.flip{grid-template-columns:1fr 1fr}
 .player.flip .copy{order:2} .player.flip figure{order:1}
-.glow{position:absolute;inset:0;background:radial-gradient(55vw 55vw at 78% 30%,color-mix(in srgb,var(--p) 34%,transparent),transparent 62%),radial-gradient(38vw 38vw at 12% 85%,color-mix(in srgb,var(--s) 22%,transparent),transparent 60%);pointer-events:none}
-.vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 45%,transparent 45%,rgba(0,0,0,.88) 100%);pointer-events:none}
+.glow{position:absolute;inset:0;background:radial-gradient(85vw 85vw at 78% 30%,color-mix(in srgb,var(--p) 30%,transparent),transparent 78%),radial-gradient(58vw 58vw at 12% 85%,color-mix(in srgb,var(--s) 18%,transparent),transparent 74%);pointer-events:none}
+.vig{position:absolute;inset:0;background:radial-gradient(155% 125% at 50% 45%,transparent 58%,rgba(0,0,0,.5) 100%);pointer-events:none}
 .bglogo{position:absolute;right:-40px;top:30px;width:300px;opacity:.10}
 .copy{position:relative;z-index:2;align-self:center;padding-bottom:28px}
 .era{font-family:'Courier New',monospace;letter-spacing:.28em;font-size:12px;color:var(--d);text-transform:uppercase;margin-bottom:14px}
@@ -76,8 +76,8 @@ header h1{font-family:'g-anton','Arial Black',sans-serif;font-size:clamp(2.6rem,
 .logo{width:86px;margin-top:28px}
 figure{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;height:100%;min-height:0;perspective:1400px}
 .tilt{position:relative;display:inline-block;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.tilt img{display:block;width:auto;height:auto;max-width:49vw;max-height:calc(100vh - 92px);max-height:calc(100svh - 92px);object-fit:contain;filter:drop-shadow(0 0 46px color-mix(in srgb,var(--d) 42%,transparent)) drop-shadow(0 40px 50px rgba(0,0,0,.75))}
-.sheen{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--sx,50%) var(--sy,30%),rgba(255,244,220,.16),transparent 42%);mix-blend-mode:overlay;-webkit-mask-image:var(--img);mask-image:var(--img);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.tilt img{display:block;width:auto;height:auto;max-width:49vw;max-height:calc(100vh - 92px);max-height:calc(100svh - 92px);object-fit:contain;filter:drop-shadow(0 0 46px color-mix(in srgb,var(--d) 42%,transparent)) drop-shadow(0 -8px 28px rgba(255,244,220,.10)) drop-shadow(0 40px 50px rgba(0,0,0,.75))}
+
 footer{padding:60px 6vw;background:#000;color:#8b8578;font-size:13px;line-height:1.7;border-top:1px solid #1c1c1c}
 footer b{color:#ddd}
 @media(max-width:760px){.player,.player.flip{grid-template-columns:1fr;grid-template-rows:auto 1fr;height:auto;min-height:100svh;padding:70px 20px 0}.player.flip .copy{order:1}.player.flip figure{order:2}figure{height:100%}.tilt img{max-width:94vw;max-height:64svh}.copy{padding-bottom:10px}header img{height:76px}header h1{font-size:2.15rem}.bglogo{width:180px}}
@@ -109,6 +109,11 @@ nav{padding-right:104px}
 .player.wide .tilt img{max-width:56vw}
 @media(max-width:760px){.player.wide{grid-template-columns:1fr;grid-template-rows:auto 1fr}.player.wide .tilt img{max-width:94vw}}
 @media(max-width:760px){.rec{top:auto;bottom:12px;right:12px}}
+.player.bleed:not(.flip){padding-right:0}
+.player.bleed.flip{padding-left:0}
+.player.bleed:not(.flip) figure{justify-content:flex-end}
+.player.bleed.flip figure{justify-content:flex-start}
+@media(max-width:760px){.player.bleed figure{margin-left:-20px;margin-right:-20px}.player.bleed:not(.flip) figure{justify-content:flex-end}.player.bleed.flip figure{justify-content:flex-start}.player.bleed .tilt img{max-width:100vw}}
 @media (prefers-reduced-motion: reduce){.grain{animation:none}header h1{animation:none}.rec i{animation:none}}
 </style></head><body>
 <div class="scan"></div><div class="grain"></div><div class="glx gla"></div><div class="glx glb"></div><div class="rec"><i></i>REC</div>
@@ -124,7 +129,7 @@ nav{padding-right:104px}
     <div class="meta">ANTHONY DAVIS &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; WASHINGTON WIZARDS</div>
     <img class="logo" data-key="assets_logos_wsh.png" src="" alt="Washington Wizards logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-10.webp"><img data-key="assets_players_profile-10.webp" src="" alt="Anthony Davis — Washington Wizards"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-10.webp"><img data-key="assets_players_profile-10.webp" src="" alt="Anthony Davis — Washington Wizards"></div></figure>
 </section>
 <section class="player flip" id="anthony-edwards" style="--p:#0C2340;--s:#236192;--d:#78BE20">
   <div class="glow"></div><div class="vig"></div>
@@ -135,7 +140,7 @@ nav{padding-right:104px}
     <div class="meta">ANTHONY EDWARDS &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; MINNESOTA TIMBERWOLVES</div>
     <img class="logo" data-key="assets_logos_min.png" src="" alt="Minnesota Timberwolves logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-27.webp"><img data-key="assets_players_profile-27.webp" src="" alt="Anthony Edwards — Minnesota Timberwolves"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-27.webp"><img data-key="assets_players_profile-27.webp" src="" alt="Anthony Edwards — Minnesota Timberwolves"></div></figure>
 </section>
 <section class="player " id="bronny-james" style="--p:#552583;--s:#FDB927;--d:#A855F7">
   <div class="glow"></div><div class="vig"></div>
@@ -146,7 +151,7 @@ nav{padding-right:104px}
     <div class="meta">BRONNY JAMES &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; LOS ANGELES LAKERS</div>
     <img class="logo" data-key="assets_logos_lal.png" src="" alt="Los Angeles Lakers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-15.webp"><img data-key="assets_players_profile-15.webp" src="" alt="Bronny James — Los Angeles Lakers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-15.webp"><img data-key="assets_players_profile-15.webp" src="" alt="Bronny James — Los Angeles Lakers"></div></figure>
 </section>
 <section class="player flip" id="cade-cunningham" style="--p:#C8102E;--s:#1D42BA;--d:#C9D4E3">
   <div class="glow"></div><div class="vig"></div>
@@ -157,7 +162,7 @@ nav{padding-right:104px}
     <div class="meta">CADE CUNNINGHAM &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; DETROIT PISTONS</div>
     <img class="logo" data-key="assets_logos_det.png" src="" alt="Detroit Pistons logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-02.webp"><img data-key="assets_players_profile-02.webp" src="" alt="Cade Cunningham — Detroit Pistons"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-02.webp"><img data-key="assets_players_profile-02.webp" src="" alt="Cade Cunningham — Detroit Pistons"></div></figure>
 </section>
 <section class="player " id="damian-lillard" style="--p:#E03A3E;--s:#000000;--d:#FF3B3B">
   <div class="glow"></div><div class="vig"></div>
@@ -168,9 +173,9 @@ nav{padding-right:104px}
     <div class="meta">DAMIAN LILLARD &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; PORTLAND TRAIL BLAZERS</div>
     <img class="logo" data-key="assets_logos_por.png" src="" alt="Portland Trail Blazers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-11.webp"><img data-key="assets_players_profile-11.webp" src="" alt="Damian Lillard — Portland Trail Blazers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-11.webp"><img data-key="assets_players_profile-11.webp" src="" alt="Damian Lillard — Portland Trail Blazers"></div></figure>
 </section>
-<section class="player flip" id="devin-booker" style="--p:#1D1160;--s:#E56020;--d:#E56020">
+<section class="player flip bleed" id="devin-booker" style="--p:#1D1160;--s:#E56020;--d:#E56020">
   <div class="glow"></div><div class="vig"></div>
   <span class="filetag">FILE 06 // DEVIN BOOKER</span>
   <img class="bglogo" data-key="assets_logos_phx.png" src="" alt="">
@@ -179,7 +184,7 @@ nav{padding-right:104px}
     <div class="meta">DEVIN BOOKER &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; PHOENIX SUNS</div>
     <img class="logo" data-key="assets_logos_phx.png" src="" alt="Phoenix Suns logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-06.webp"><img data-key="assets_players_profile-06.webp" src="" alt="Devin Booker — Phoenix Suns"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-06.webp"><img data-key="assets_players_profile-06.webp" src="" alt="Devin Booker — Phoenix Suns"></div></figure>
 </section>
 <section class="player " id="domantas-sabonis" style="--p:#5A2D81;--s:#63727A;--d:#9B7EDE">
   <div class="glow"></div><div class="vig"></div>
@@ -190,7 +195,7 @@ nav{padding-right:104px}
     <div class="meta">DOMANTAS SABONIS &nbsp;·&nbsp; CENTER &nbsp;·&nbsp; SACRAMENTO KINGS</div>
     <img class="logo" data-key="assets_logos_sac.png" src="" alt="Sacramento Kings logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-14.webp"><img data-key="assets_players_profile-14.webp" src="" alt="Domantas Sabonis — Sacramento Kings"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-14.webp"><img data-key="assets_players_profile-14.webp" src="" alt="Domantas Sabonis — Sacramento Kings"></div></figure>
 </section>
 <section class="player flip" id="donovan-mitchell" style="--p:#860038;--s:#FDBB30;--d:#FDBB30">
   <div class="glow"></div><div class="vig"></div>
@@ -201,7 +206,7 @@ nav{padding-right:104px}
     <div class="meta">DONOVAN MITCHELL &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; CLEVELAND CAVALIERS</div>
     <img class="logo" data-key="assets_logos_cle.png" src="" alt="Cleveland Cavaliers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-24.webp"><img data-key="assets_players_profile-24.webp" src="" alt="Donovan Mitchell — Cleveland Cavaliers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-24.webp"><img data-key="assets_players_profile-24.webp" src="" alt="Donovan Mitchell — Cleveland Cavaliers"></div></figure>
 </section>
 <section class="player " id="giannis-antetokounmpo" style="--p:#98002E;--s:#F9A01B;--d:#FFFFFF">
   <div class="glow"></div><div class="vig"></div>
@@ -212,9 +217,9 @@ nav{padding-right:104px}
     <div class="meta">GIANNIS ANTETOKOUNMPO &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; MIAMI HEAT</div>
     <img class="logo" data-key="assets_logos_mia.png" src="" alt="Miami Heat logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-04.webp"><img data-key="assets_players_profile-04.webp" src="" alt="Giannis Antetokounmpo — Miami Heat"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-04.webp"><img data-key="assets_players_profile-04.webp" src="" alt="Giannis Antetokounmpo — Miami Heat"></div></figure>
 </section>
-<section class="player flip wide" id="ja-morant" style="--p:#E03A3E;--s:#000000;--d:#E03A3E">
+<section class="player flip wide bleed" id="ja-morant" style="--p:#E03A3E;--s:#000000;--d:#E03A3E">
   <div class="glow"></div><div class="vig"></div>
   <span class="filetag">FILE 10 // JA MORANT</span>
   <img class="bglogo" data-key="assets_logos_por.png" src="" alt="">
@@ -223,7 +228,7 @@ nav{padding-right:104px}
     <div class="meta">JA MORANT &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; PORTLAND TRAIL BLAZERS</div>
     <img class="logo" data-key="assets_logos_por.png" src="" alt="Portland Trail Blazers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-30.webp"><img data-key="assets_players_profile-30.webp" src="" alt="Ja Morant — Portland Trail Blazers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-30.webp"><img data-key="assets_players_profile-30.webp" src="" alt="Ja Morant — Portland Trail Blazers"></div></figure>
 </section>
 <section class="player " id="jalen-brunson" style="--p:#006BB6;--s:#F58426;--d:#F58426">
   <div class="glow"></div><div class="vig"></div>
@@ -234,7 +239,7 @@ nav{padding-right:104px}
     <div class="meta">JALEN BRUNSON &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; NEW YORK KNICKS</div>
     <img class="logo" data-key="assets_logos_ny.png" src="" alt="New York Knicks logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-09.webp"><img data-key="assets_players_profile-09.webp" src="" alt="Jalen Brunson — New York Knicks"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-09.webp"><img data-key="assets_players_profile-09.webp" src="" alt="Jalen Brunson — New York Knicks"></div></figure>
 </section>
 <section class="player flip" id="jaylen-brown" style="--p:#006BB6;--s:#ED174C;--d:#E8ECF4">
   <div class="glow"></div><div class="vig"></div>
@@ -245,9 +250,9 @@ nav{padding-right:104px}
     <div class="meta">JAYLEN BROWN &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; PHILADELPHIA 76ERS</div>
     <img class="logo" data-key="assets_logos_phi.png" src="" alt="Philadelphia 76ers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-12.webp"><img data-key="assets_players_profile-12.webp" src="" alt="Jaylen Brown — Philadelphia 76ers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-12.webp"><img data-key="assets_players_profile-12.webp" src="" alt="Jaylen Brown — Philadelphia 76ers"></div></figure>
 </section>
-<section class="player " id="jayson-tatum" style="--p:#007A33;--s:#BA9653;--d:#00B04F">
+<section class="player  bleed" id="jayson-tatum" style="--p:#007A33;--s:#BA9653;--d:#00B04F">
   <div class="glow"></div><div class="vig"></div>
   <span class="filetag">FILE 13 // JAYSON TATUM</span>
   <img class="bglogo" data-key="assets_logos_bos.png" src="" alt="">
@@ -256,7 +261,7 @@ nav{padding-right:104px}
     <div class="meta">JAYSON TATUM &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; BOSTON CELTICS</div>
     <img class="logo" data-key="assets_logos_bos.png" src="" alt="Boston Celtics logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-01.webp"><img data-key="assets_players_profile-01.webp" src="" alt="Jayson Tatum — Boston Celtics"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-01.webp"><img data-key="assets_players_profile-01.webp" src="" alt="Jayson Tatum — Boston Celtics"></div></figure>
 </section>
 <section class="player flip" id="jordan-poole" style="--p:#0C2340;--s:#C8102E;--d:#7FD4FF">
   <div class="glow"></div><div class="vig"></div>
@@ -267,7 +272,7 @@ nav{padding-right:104px}
     <div class="meta">JORDAN POOLE &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; NEW ORLEANS PELICANS</div>
     <img class="logo" data-key="assets_logos_no.png" src="" alt="New Orleans Pelicans logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-19.webp"><img data-key="assets_players_profile-19.webp" src="" alt="Jordan Poole — New Orleans Pelicans"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-19.webp"><img data-key="assets_players_profile-19.webp" src="" alt="Jordan Poole — New Orleans Pelicans"></div></figure>
 </section>
 <section class="player " id="josh-giddey" style="--p:#CE1141;--s:#000000;--d:#CE1141">
   <div class="glow"></div><div class="vig"></div>
@@ -278,7 +283,7 @@ nav{padding-right:104px}
     <div class="meta">JOSH GIDDEY &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; CHICAGO BULLS</div>
     <img class="logo" data-key="assets_logos_chi.png" src="" alt="Chicago Bulls logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-23.webp"><img data-key="assets_players_profile-23.webp" src="" alt="Josh Giddey — Chicago Bulls"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-23.webp"><img data-key="assets_players_profile-23.webp" src="" alt="Josh Giddey — Chicago Bulls"></div></figure>
 </section>
 <section class="player flip" id="kawhi-leonard" style="--p:#CE1141;--s:#000000;--d:#9B5DE5">
   <div class="glow"></div><div class="vig"></div>
@@ -289,7 +294,7 @@ nav{padding-right:104px}
     <div class="meta">KAWHI LEONARD &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; TORONTO RAPTORS</div>
     <img class="logo" data-key="assets_logos_tor.png" src="" alt="Toronto Raptors logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-08.webp"><img data-key="assets_players_profile-08.webp" src="" alt="Kawhi Leonard — Toronto Raptors"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-08.webp"><img data-key="assets_players_profile-08.webp" src="" alt="Kawhi Leonard — Toronto Raptors"></div></figure>
 </section>
 <section class="player  wide" id="kevin-durant" style="--p:#CE1141;--s:#C4CED4;--d:#CE1141">
   <div class="glow"></div><div class="vig"></div>
@@ -300,7 +305,7 @@ nav{padding-right:104px}
     <div class="meta">KEVIN DURANT &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; HOUSTON ROCKETS</div>
     <img class="logo" data-key="assets_logos_hou.png" src="" alt="Houston Rockets logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-28.webp"><img data-key="assets_players_profile-28.webp" src="" alt="Kevin Durant — Houston Rockets"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-28.webp"><img data-key="assets_players_profile-28.webp" src="" alt="Kevin Durant — Houston Rockets"></div></figure>
 </section>
 <section class="player flip" id="kyrie-irving" style="--p:#00538C;--s:#B8C4CA;--d:#7FB2E0">
   <div class="glow"></div><div class="vig"></div>
@@ -311,7 +316,7 @@ nav{padding-right:104px}
     <div class="meta">KYRIE IRVING &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; DALLAS MAVERICKS</div>
     <img class="logo" data-key="assets_logos_dal.png" src="" alt="Dallas Mavericks logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-21.webp"><img data-key="assets_players_profile-21.webp" src="" alt="Kyrie Irving — Dallas Mavericks"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-21.webp"><img data-key="assets_players_profile-21.webp" src="" alt="Kyrie Irving — Dallas Mavericks"></div></figure>
 </section>
 <section class="player " id="lamelo-ball" style="--p:#0C2340;--s:#236192;--d:#2E7CD6">
   <div class="glow"></div><div class="vig"></div>
@@ -322,7 +327,7 @@ nav{padding-right:104px}
     <div class="meta">LAMELO BALL &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; MINNESOTA TIMBERWOLVES</div>
     <img class="logo" data-key="assets_logos_min.png" src="" alt="Minnesota Timberwolves logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-13.webp"><img data-key="assets_players_profile-13.webp" src="" alt="LaMelo Ball — Minnesota Timberwolves"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-13.webp"><img data-key="assets_players_profile-13.webp" src="" alt="LaMelo Ball — Minnesota Timberwolves"></div></figure>
 </section>
 <section class="player flip" id="lauri-markkanen" style="--p:#002B5C;--s:#F9A01B;--d:#0057B7">
   <div class="glow"></div><div class="vig"></div>
@@ -333,7 +338,7 @@ nav{padding-right:104px}
     <div class="meta">LAURI MARKKANEN &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; UTAH JAZZ</div>
     <img class="logo" data-key="assets_logos_utah.png" src="" alt="Utah Jazz logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-22.webp"><img data-key="assets_players_profile-22.webp" src="" alt="Lauri Markkanen — Utah Jazz"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-22.webp"><img data-key="assets_players_profile-22.webp" src="" alt="Lauri Markkanen — Utah Jazz"></div></figure>
 </section>
 <section class="player " id="luka-doncic" style="--p:#552583;--s:#FDB927;--d:#00A651">
   <div class="glow"></div><div class="vig"></div>
@@ -344,9 +349,9 @@ nav{padding-right:104px}
     <div class="meta">LUKA DONCIC &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; LOS ANGELES LAKERS</div>
     <img class="logo" data-key="assets_logos_lal.png" src="" alt="Los Angeles Lakers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-17.webp"><img data-key="assets_players_profile-17.webp" src="" alt="Luka Doncic — Los Angeles Lakers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-17.webp"><img data-key="assets_players_profile-17.webp" src="" alt="Luka Doncic — Los Angeles Lakers"></div></figure>
 </section>
-<section class="player flip" id="nikola-jokic" style="--p:#0E2240;--s:#FEC524;--d:#FFD21F">
+<section class="player flip bleed" id="nikola-jokic" style="--p:#0E2240;--s:#FEC524;--d:#FFD21F">
   <div class="glow"></div><div class="vig"></div>
   <span class="filetag">FILE 22 // NIKOLA JOKIC</span>
   <img class="bglogo" data-key="assets_logos_den.png" src="" alt="">
@@ -355,9 +360,9 @@ nav{padding-right:104px}
     <div class="meta">NIKOLA JOKIC &nbsp;·&nbsp; CENTER &nbsp;·&nbsp; DENVER NUGGETS</div>
     <img class="logo" data-key="assets_logos_den.png" src="" alt="Denver Nuggets logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-03.webp"><img data-key="assets_players_profile-03.webp" src="" alt="Nikola Jokic — Denver Nuggets"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-03.webp"><img data-key="assets_players_profile-03.webp" src="" alt="Nikola Jokic — Denver Nuggets"></div></figure>
 </section>
-<section class="player " id="paolo-banchero" style="--p:#0077C0;--s:#C4CED4;--d:#38A1DB">
+<section class="player  bleed" id="paolo-banchero" style="--p:#0077C0;--s:#C4CED4;--d:#38A1DB">
   <div class="glow"></div><div class="vig"></div>
   <span class="filetag">FILE 23 // PAOLO BANCHERO</span>
   <img class="bglogo" data-key="assets_logos_orl.png" src="" alt="">
@@ -366,7 +371,7 @@ nav{padding-right:104px}
     <div class="meta">PAOLO BANCHERO &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; ORLANDO MAGIC</div>
     <img class="logo" data-key="assets_logos_orl.png" src="" alt="Orlando Magic logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-29.webp"><img data-key="assets_players_profile-29.webp" src="" alt="Paolo Banchero — Orlando Magic"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-29.webp"><img data-key="assets_players_profile-29.webp" src="" alt="Paolo Banchero — Orlando Magic"></div></figure>
 </section>
 <section class="player flip" id="rui-hachimura" style="--p:#C8102E;--s:#1D428A;--d:#C8102E">
   <div class="glow"></div><div class="vig"></div>
@@ -377,7 +382,7 @@ nav{padding-right:104px}
     <div class="meta">RUI HACHIMURA &nbsp;·&nbsp; FORWARD &nbsp;·&nbsp; LOS ANGELES CLIPPERS</div>
     <img class="logo" data-key="assets_logos_lac.png" src="" alt="Los Angeles Clippers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-18.webp"><img data-key="assets_players_profile-18.webp" src="" alt="Rui Hachimura — Los Angeles Clippers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-18.webp"><img data-key="assets_players_profile-18.webp" src="" alt="Rui Hachimura — Los Angeles Clippers"></div></figure>
 </section>
 <section class="player " id="shai-gilgeous-alexander" style="--p:#00653A;--s:#FFC200;--d:#C7CBD6">
   <div class="glow"></div><div class="vig"></div>
@@ -388,7 +393,7 @@ nav{padding-right:104px}
     <div class="meta">SHAI GILGEOUS-ALEXANDER &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; SEATTLE SUPERSONICS</div>
     <img class="logo" data-key="assets_logos_sea.png" src="" alt="Seattle SuperSonics logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-25.webp"><img data-key="assets_players_profile-25.webp" src="" alt="Shai Gilgeous-Alexander — Seattle SuperSonics"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-25.webp"><img data-key="assets_players_profile-25.webp" src="" alt="Shai Gilgeous-Alexander — Seattle SuperSonics"></div></figure>
 </section>
 <section class="player flip" id="stephen-curry" style="--p:#1D428A;--s:#FFC72C;--d:#FFC72C">
   <div class="glow"></div><div class="vig"></div>
@@ -399,7 +404,7 @@ nav{padding-right:104px}
     <div class="meta">STEPHEN CURRY &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; GOLDEN STATE WARRIORS</div>
     <img class="logo" data-key="assets_logos_gs.png" src="" alt="Golden State Warriors logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-07.webp"><img data-key="assets_players_profile-07.webp" src="" alt="Stephen Curry — Golden State Warriors"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-07.webp"><img data-key="assets_players_profile-07.webp" src="" alt="Stephen Curry — Golden State Warriors"></div></figure>
 </section>
 <section class="player " id="ty-jerome" style="--p:#5D76A9;--s:#12173F;--d:#8FA8D8">
   <div class="glow"></div><div class="vig"></div>
@@ -410,7 +415,7 @@ nav{padding-right:104px}
     <div class="meta">TY JEROME &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; MEMPHIS GRIZZLIES</div>
     <img class="logo" data-key="assets_logos_mem.png" src="" alt="Memphis Grizzlies logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-16.webp"><img data-key="assets_players_profile-16.webp" src="" alt="Ty Jerome — Memphis Grizzlies"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-16.webp"><img data-key="assets_players_profile-16.webp" src="" alt="Ty Jerome — Memphis Grizzlies"></div></figure>
 </section>
 <section class="player flip" id="tyler-herro" style="--p:#00471B;--s:#EEE1C6;--d:#EEE1C6">
   <div class="glow"></div><div class="vig"></div>
@@ -421,7 +426,7 @@ nav{padding-right:104px}
     <div class="meta">TYLER HERRO &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; MILWAUKEE BUCKS</div>
     <img class="logo" data-key="assets_logos_mil.png" src="" alt="Milwaukee Bucks logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-20.webp"><img data-key="assets_players_profile-20.webp" src="" alt="Tyler Herro — Milwaukee Bucks"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-20.webp"><img data-key="assets_players_profile-20.webp" src="" alt="Tyler Herro — Milwaukee Bucks"></div></figure>
 </section>
 <section class="player " id="tyrese-haliburton" style="--p:#002D62;--s:#FDBB30;--d:#FDBB30">
   <div class="glow"></div><div class="vig"></div>
@@ -432,7 +437,7 @@ nav{padding-right:104px}
     <div class="meta">TYRESE HALIBURTON &nbsp;·&nbsp; GUARD &nbsp;·&nbsp; INDIANA PACERS</div>
     <img class="logo" data-key="assets_logos_ind.png" src="" alt="Indiana Pacers logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-26.webp"><img data-key="assets_players_profile-26.webp" src="" alt="Tyrese Haliburton — Indiana Pacers"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-26.webp"><img data-key="assets_players_profile-26.webp" src="" alt="Tyrese Haliburton — Indiana Pacers"></div></figure>
 </section>
 <section class="player flip" id="victor-wembanyama" style="--p:#000000;--s:#C4CED4;--d:#39FF14">
   <div class="glow"></div><div class="vig"></div>
@@ -443,9 +448,9 @@ nav{padding-right:104px}
     <div class="meta">VICTOR WEMBANYAMA &nbsp;·&nbsp; CENTER &nbsp;·&nbsp; SAN ANTONIO SPURS</div>
     <img class="logo" data-key="assets_logos_sa.png" src="" alt="San Antonio Spurs logo">
   </div>
-  <figure><div class="tilt" data-tiltkey="assets_players_profile-05.webp"><img data-key="assets_players_profile-05.webp" src="" alt="Victor Wembanyama — San Antonio Spurs"><div class="sheen"></div></div></figure>
+  <figure><div class="tilt" data-tiltkey="assets_players_profile-05.webp"><img data-key="assets_players_profile-05.webp" src="" alt="Victor Wembanyama — San Antonio Spurs"></div></figure>
 </section>
-<footer><b>About this edition:</b> All 30 profiles were cut to transparent PNGs from Lucian's uploaded photos at full native resolution with the pro segmentation model and edge matting (PNG masters kept in the project; the site loads high-quality renditions of the same cutouts). Titles are each player's most well-known nickname, restyled per player — JT in Celtics green, The Joker in the 2019 film's Gothic Joker yellow, The Greek Freak in Greek letters mixed into the English, Wemby in neon Area 51 stencil, Book in a Phoenix orange-to-purple lowrider gradient, The Klaw as a custom Gemini-lettered blackletter PNG echoing the Mister Cartoon lettering on his Clippers jersey, The Truth as a custom Gemini-lettered PNG in the classic Mets script, Luka Magic in Slovenian-style blackletter green, SGA in skinny silver Six Caps, Bronny in royal Cinzel, Uncle Drew in spiritual Katibeh calligraphy, and the rest in their team's own type or a face picked for the man. Every title's color, texture and shadow is matched to something the man is wearing in his photo — an iced pendant, a velour tracksuit, a leather jacket. Sections are themed by the jersey in each photo, not the player's real team. The figure tilt and lamination sheen are ported from Northern Front's character-select screen. No ratings are shown in this edition — the showcase is the style.</footer>
+
 <script src="bundle-1.js"></script>
 <script src="bundle-2.js"></script>
 <script src="bundle-3.js"></script>
